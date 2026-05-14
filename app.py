@@ -14,7 +14,7 @@ st.set_page_config(
 # ==================== 加载画像中心点 ====================
 @st.cache_data
 def load_centers():
-    df = pd.read_excel("new/cluster_centers_8d.xlsx", index_col=0)
+    df = pd.read_excel("cluster_centers_8d.xlsx", index_col=0)
     return df
 
 centers_df = load_centers()
@@ -23,7 +23,7 @@ centers_df = load_centers()
 # ==================== 加载情景题 ====================
 @st.cache_data
 def load_scenarios():
-    with open("new/generated_scenarios.json", "r", encoding="utf-8") as f:
+    with open("generated_scenarios.json", "r", encoding="utf-8") as f:
         scenarios = json.load(f)
     return scenarios
 
